@@ -1,0 +1,66 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Dindju BARRIEN Notify
+</name>
+</assembly>
+<members>
+<member name="T:dindju_barrien_notify.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:dindju_barrien_notify.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:dindju_barrien_notify.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.ExecuteShutdown(System.Int32,System.Boolean)">
+ <summary>
+ SHUTDOWN:[delai_secondes] ou RESTART:[delai_secondes]
+ Exemple : SHUTDOWN:60 → éteint dans 60 secondes
+ Exemple : RESTART:0  → redémarre immédiatement
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.CancelShutdown">
+ <summary>
+ Annule un shutdown/restart en cours : SHUTDOWN:CANCEL
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.KillProcessByName(System.String)">
+ <summary>
+ KILL_PROCESS:nom.exe — Tue tous les processus portant ce nom
+ Exemple : KILL_PROCESS:notepad.exe
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.SendScreenshot(System.Net.Sockets.NetworkStream)">
+ <summary>
+ SCREENSHOT — Capture l'écran principal et l'envoie en JPEG via le stream réseau.
+ Protocole de réponse : 4 octets (Int32 BigEndian) = taille des données, puis les octets JPEG.
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.SetMute(System.Boolean)">
+ <summary>
+ MUTE / UNMUTE — Contrôle du volume via WinAPI (sans dépendance externe)
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.SendMessageToServer(System.String,System.String)">
+ <summary>
+ Envoie un message avec authentification par token.
+ Format : TOKEN:[token]|[commande]
+ </summary>
+</member>
+<member name="M:dindju_barrien_notify.Form1.SendMessageAndReceiveBytes(System.String,System.String)">
+ <summary>
+ Envoi avec réception d'une réponse binaire (pour SCREENSHOT).
+ </summary>
+</member>
+</members>
+</doc>
